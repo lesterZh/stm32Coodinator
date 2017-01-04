@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: zht Microsoft, Microsoft, LIC=MGXAR-KE5ES-34SST-RXUUY-7LG2H-9HC8G
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.14.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMSTM.DLL V1.65.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:        TARMSTM.DLL   
+ 
+<h2>Project:</h2>
+G:\STM32\stm_source\stm32Coodinator\CoordinatorRCT6\USER\Ð­µ÷Æ÷.uvprojx
+Project File Date:  12/29/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(18): warning:  #1295-D: Deprecated declaration connectServer - give arg types
+  void connectServer();
+main.c(40): warning:  #177-D: variable "num" was declared but never referenced
+        int i=0, id=0, num;
+main.c(96): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+        LCD_P8x16Str(0,0,park_num);
+main.c(72): warning:  #177-D: variable "t" was declared but never referenced
+        u8 t;
+main.c(73): warning:  #177-D: variable "len" was declared but never referenced
+        u8 len;  
+main.c(227): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *restrict"
+        printf(data);
+main.c(405): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+                                sprintf(cmd_string, "cmd:%d  ", cmd_times);                             
+main.c(407): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+                                clean_chars(cmd_string, 20);
+main.c(467): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+                                sprintf(cmd_string, "fb:%d  ", fb_times);                               
+main.c(469): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+                                clean_chars(cmd_string, 20);
+main.c: 10 warnings, 0 errors
+linking...
+Program Size: Code=20886 RO-data=2586 RW-data=1920 ZI-data=1776  
+FromELF: creating hex file...
+"..\OBJ\USART.axf" - 0 Error(s), 10 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  G:\STM32\stm_source\stm32Coodinator\CoordinatorRCT6\USER\RTE
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
