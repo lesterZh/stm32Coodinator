@@ -37,19 +37,19 @@ main.c(72): warning:  #177-D: variable "t" was declared but never referenced
         u8 t;
 main.c(73): warning:  #177-D: variable "len" was declared but never referenced
         u8 len;  
-main.c(227): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *restrict"
+main.c(232): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *restrict"
         printf(data);
-main.c(405): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+main.c(419): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
                                 sprintf(cmd_string, "cmd:%d  ", cmd_times);                             
-main.c(407): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+main.c(421): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
                                 clean_chars(cmd_string, 20);
-main.c(467): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+main.c(481): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
                                 sprintf(cmd_string, "fb:%d  ", fb_times);                               
-main.c(469): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+main.c(483): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
                                 clean_chars(cmd_string, 20);
 main.c: 10 warnings, 0 errors
 linking...
-Program Size: Code=20886 RO-data=2586 RW-data=1920 ZI-data=1776  
+Program Size: Code=20978 RO-data=2586 RW-data=1920 ZI-data=1768  
 FromELF: creating hex file...
 "..\OBJ\USART.axf" - 0 Error(s), 10 Warning(s).
 

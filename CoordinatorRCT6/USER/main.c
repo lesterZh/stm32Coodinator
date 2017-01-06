@@ -101,6 +101,8 @@ int open_lock = 0; //车位锁是否开启
 	USART1_send_data(te,2);//好像串口第一次发送时候第一个字节会没有，故初始化先发送一次
 	USART2_send_data(te,2);
 	
+	connectServer();
+	
 	while(1)
 	{
 		keyFun();		
@@ -191,18 +193,21 @@ u8 isSendOK()
  //显示发送状态
 void showLcdStr1(u8 * data)
 {
+	LCD_P8x16Str(0,2,"              ");
 	LCD_P8x16Str(0,2,data);	
 }
 
  //显示网络连接过程
 void showLcdStr2(u8 * data)
 {
+	LCD_P8x16Str(0,4,"              ");
 	LCD_P8x16Str(0,4,data);
 }
 
  //显示网络连接结果
 void showLcdStr3(u8 * data)
 {
+	LCD_P8x16Str(0,6,"              ");
 	LCD_P8x16Str(0,6,data);	
 }
 
@@ -258,7 +263,7 @@ void sendDataEnd()
 
 void connectServer() 
 {	
-	int time_us = 500;
+	int time_us = 300;
 
 	showLcdStr1("         ");	
 	showLcdStr3("         ");
@@ -307,6 +312,11 @@ void connectServer()
 		
 }
 
+void keep_connect(void)
+{
+	
+}
+
 void closeServer() 
 {
 	int time_us = 1000;
@@ -330,7 +340,10 @@ int cmd_times = 0;
 
 char rec_index = 1;
 
-char table_state[21] = {0}; //默认有20个停车位，未用为0，已使用为1，对应下标停车位编号
+#define CAR_PARK_NUM 10 //停车位的数量
+
+char table_state[CAR_PARK_NUM+1] = {0}; //默认有CAR_PARK_NUM个停车位，/
+                                        //未用为0，已使用为1，对应下标停车位编号
 
 void USART1_IRQHandler(void)                	//串口1中断服务程序
 {
@@ -359,6 +372,7 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 				{
 					showLcdStr3("con fail");
 					connectOkFlag = 0;
+					registUser();
 				}
 
 				connectRequestFlag = 0;
@@ -371,13 +385,13 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 		{
 			if (res == 0x54)//查询当前停车位的使用情况
 			{
-				for (i=1; i<21; i++) //获取每个停车位的状态
+				for (i=1; i<CAR_PARK_NUM + 1; i++) //获取每个停车位的状态
 				{
 					fb_all_state[2+i] = table_state[i];
 				}
 				
 				//很奇怪，自动发送时候第一个 s 字符无法发送出去
-				sendData2(fb_all_state, 23);
+				sendData2(fb_all_state, CAR_PARK_NUM + 3);
 				showLcdStr2("get state  ");
 				//变量复位
 				recCommandFlag = 0;
@@ -478,13 +492,12 @@ void USART2_IRQHandler(void)
 			
 			return;	
 		}
-		
-    }
+  }
       
 }
 
 
-unsigned int timer10ms = 0;
+unsigned long timer10ms = 1;
 void TIM2_IRQHandler(void)   //TIM3中断
 {
 	if(TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
@@ -496,9 +509,11 @@ void TIM2_IRQHandler(void)   //TIM3中断
 			LED1=!LED1;
 		}
 		
-		if (timer10ms % 100 == 0) 
+		if (timer10ms % (100*60*1) == 0) //3分钟自动重新连接服务器
 		{
-			
+			//connectServer();
+			//keep_connect();
+			sendData("00");
 		}
 	}
 }
@@ -516,7 +531,7 @@ void keyFun(void)
 		
 			break;
 		case KEY2_PRES:
-			
+			keep_connect();
 			break;
 		case KEY3_PRES:	
 			
