@@ -305,7 +305,8 @@ void connectServer()
 
 
 	//printf("AT+CIPSTART=\"TCP\",\"haitao.uicp.io\",\"20005\"\r\n");
-	printf("AT+CIPSTART=\"TCP\",\"haitao.uicp.io\",\"23712\"\r\n");
+	//printf("AT+CIPSTART=\"TCP\",\"haitao.uicp.io\",\"23712\"\r\n");
+	printf("AT+CIPSTART=\"TCP\",\"15bm326540.51mypc.cn\",\"20005\"\r\n");
 	connectRequestFlag = 1;
 	showLcdStr2("6         ");
 	delay_ms(time_us);
