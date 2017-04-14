@@ -1,5 +1,5 @@
 Dependencies for Project '协调器', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x58C63D0F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE-I G:\毕业相关\毕业设计\stm_source\stm32Coodinator\CoordinatorRCT6\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x58F08D8C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE-I G:\毕业相关\毕业设计\stm_source\stm32Coodinator\CoordinatorRCT6\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\HARDWARE\LED\led.h)(0x58633560)
 I (..\SYSTEM\sys\sys.h)(0x584A5E73)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
